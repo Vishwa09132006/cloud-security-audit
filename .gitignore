@@ -1,0 +1,28 @@
+# ---- VS Code ----
+.vscode/
+*.code-workspace
+
+# ---- Python ----
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+.python-version
+
+# Virtual environments
+env/
+venv/
+.venv/
+
+# ---- Logs ----
+*.log
+
+# ---- System files ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Reports ----
+reports/*.csv
+reports/*.json
