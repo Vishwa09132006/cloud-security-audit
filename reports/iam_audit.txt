@@ -1,2 +1,0 @@
-﻿=== IAM MFA Audit Report ===
-⚠️ User Vishwa-IAM_ADMIN does NOT have MFA enabled!
