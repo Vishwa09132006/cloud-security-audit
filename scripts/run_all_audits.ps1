@@ -1,23 +1,51 @@
 # run_all_audits.ps1
-# Runs all audits (IAM, VPC, S3) and pushes results to GitHub
+# Master script to run IAM, VPC, and S3 audits, save reports, and push them to GitHub.
 
 Write-Host "Starting all audits..."
 
-# IAM Audit
-powershell.exe -ExecutionPolicy Bypass -File "C:\Users\vishw\cloud-security-audit\scripts\audit_iam.ps1"
+# Define paths
+$projectRoot = "C:\Users\vishw\cloud-security-audit"
+$reportDir   = Join-Path $projectRoot "reports"
 
-# VPC Audit
-powershell.exe -ExecutionPolicy Bypass -File "C:\Users\vishw\cloud-security-audit\scripts\audit_vpc.ps1"
+# Ensure reports folder exists
+if (!(Test-Path -Path $reportDir)) {
+    New-Item -ItemType Directory -Path $reportDir | Out-Null
+}
 
-# S3 Audit
-powershell.exe -ExecutionPolicy Bypass -File "C:\Users\vishw\cloud-security-audit\scripts\s3_audit.ps1"
+# Run IAM Audit
+Write-Host "`nRunning IAM audit..."
+& "$projectRoot\scripts\audit_iam.ps1"
 
-# Change to project root
-Set-Location "C:\Users\vishw\cloud-security-audit"
+# Run VPC Audit
+Write-Host "`nRunning VPC audit..."
+& "$projectRoot\scripts\audit_vpc.ps1"
 
-# Git commands
-git add reports/*.txt reports/*.json reports/*.csv
-git commit -m "Automated audit reports update"
-git push origin main
+# Run S3 Audit
+Write-Host "`nRunning S3 audit..."
+& "$projectRoot\scripts\s3_audit.ps1"
 
-Write-Host "`nReports pushed to GitHub successfully!"
+
+Write-Host "`nAll audits completed. Reports saved to: $reportDir"
+
+# Change directory to project root before git commands
+Set-Location $projectRoot
+
+# Git commit & push
+try {
+    if (Test-Path "$reportDir\*.txt")  { git add "$reportDir\*.txt" }
+    if (Test-Path "$reportDir\*.json") { git add "$reportDir\*.json" }
+    if (Test-Path "$reportDir\*.csv")  { git add "$reportDir\*.csv" }
+
+    git add "$projectRoot\scripts\*.ps1"
+
+    git commit -m "Automated audit report $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')" --allow-empty
+    git push origin main
+    Write-Host "`n✅ Reports pushed to GitHub successfully!"
+}
+catch {
+    Write-Host "`n⚠️ Git push failed: $($_.Exception.Message)"
+}
+
+# Exit cleanly for Task Scheduler
+Write-Output "All audits completed successfully."
+exit 0
