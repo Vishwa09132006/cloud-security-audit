@@ -32,12 +32,12 @@ Set-Location $projectRoot
 # Git commit & push
 try {
     # Always add PowerShell scripts
-    git add scripts/*.ps1
+    git add "$projectRoot\scripts\*.ps1"
 
-    # Add reports only if they exist
-    if (Test-Path "reports\*.txt") { git add reports\*.txt }
-    if (Test-Path "reports\*.json") { git add reports\*.json }
-    if (Test-Path "reports\*.csv") { git add reports\*.csv }
+    # Stage reports only if they exist
+    Get-ChildItem "$reportDir\*.txt","$reportDir\*.json","$reportDir\*.csv" -ErrorAction SilentlyContinue | ForEach-Object {
+        git add $_.FullName
+    }
 
     git commit -m "Automated audit report $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')" --allow-empty
     git push origin main
@@ -46,6 +46,7 @@ try {
 catch {
     Write-Host "`n⚠️ Git push failed: $($_.Exception.Message)"
 }
+
 
 
 # Exit cleanly for Task Scheduler
