@@ -24,7 +24,6 @@ Write-Host "`nRunning VPC audit..."
 Write-Host "`nRunning S3 audit..."
 & "$projectRoot\scripts\s3_audit.ps1"
 
-
 Write-Host "`nAll audits completed. Reports saved to: $reportDir"
 
 # Change directory to project root before git commands
@@ -32,11 +31,10 @@ Set-Location $projectRoot
 
 # Git commit & push
 try {
-    if (Test-Path "$reportDir\*.txt")  { git add "$reportDir\*.txt" }
-    if (Test-Path "$reportDir\*.json") { git add "$reportDir\*.json" }
-    if (Test-Path "$reportDir\*.csv")  { git add "$reportDir\*.csv" }
-
-    git add "$projectRoot\scripts\*.ps1"
+    git add reports/*.txt
+    git add reports/*.json
+    git add reports/*.csv
+    git add scripts/*.ps1
 
     git commit -m "Automated audit report $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')" --allow-empty
     git push origin main
