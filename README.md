@@ -1,55 +1,107 @@
-# ☁️ Cloud Security Audit
+# 🔐 Cloud Security Audit Automation
 
-Cloud Security Posture Audit project that identifies misconfigurations in AWS resources (IAM, S3, VPC) and provides recommendations for improving security.
+This project automates **AWS security audits** (IAM, S3, VPC) using PowerShell and pushes the results to GitHub daily.  
+It showcases my ability to script, automate, and manage cloud security workflows — all skills required for a **Cloud Engineer / DevOps role**.
 
 ---
 
 ## 🚀 Features
-- Audit IAM users, roles, and policies for least-privilege compliance  
-- Check S3 bucket configurations for encryption and public access  
-- Validate VPC settings for security best practices  
-- Generate security findings and actionable recommendations  
+- **IAM Audit** → Reports inactive users, policies, and MFA status.
+- **S3 Audit** → Lists buckets, encryption status, and public access.
+- **VPC Audit** → Captures VPC details, CIDR blocks, and configurations.
+- **Automated GitHub Push** → Reports are committed & pushed daily with Task Scheduler.
+- Outputs in **TXT, JSON, and CSV** formats for versatility.
 
 ---
 
-## 🏗️ Architecture
-This project uses:
-- **AWS CLI** for querying AWS resources  
-- **Python/PowerShell scripts** for automation  
-- **GitHub** for version control and collaboration  
+## 📂 Project Structure
+
+cloud-security-audit/
+│── reports/ # Generated audit reports
+│── scripts/ # PowerShell audit scripts
+│── run_all_audits.ps1 # Master script to run everything
+│── README.md # Project documentation
 
 ---
 
-## 🔑 Prerequisites
-- AWS Account with IAM user (programmatic access enabled)  
-- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) installed and configured  
-- [Git](https://git-scm.com/downloads) installed  
-- [Python 3.x](https://www.python.org/downloads/) (optional, for Python scripts)  
+## 📊 Sample Report
+Here’s an example from an **IAM Audit Report (JSON)**:
+
+```json
+{
+  "UserName": "Alice",
+  "MFAEnabled": true,
+  "LastUsed": "2025-09-25"
+}
 
 ---
 
-## 🛠️ Usage
-1. Clone the repository  
-   ```bash
-   git clone https://github.com/<your-username>/cloud-security-audit.git
-   cd cloud-security-audit
+⚡ Automation
 
-## 📌 Future Improvements
+A Windows Task Scheduler job runs run_all_audits.ps1 every day.
 
-Add CloudTrail audit checks
+Reports are automatically staged, committed, and pushed to GitHub:
 
-Integrate with AWS Config for real-time monitoring
+Automated audit report 2025-09-30 17:19:18
 
-Export findings to JSON/CSV for reporting
+This ensures fresh reports are always available.
 
-Create a dashboard for visualizing findings
+---
 
-## 🤝 Contributing
+🛠️ Tech Stack
 
-Contributions, issues, and feature requests are welcome!
-Feel free to fork the repo and submit a pull request.
+AWS CLI / PowerShell → Data collection
 
-## 📜 License
+Git + GitHub → Version control & publishing
 
-This project is licensed under the MIT License – see the LICENSE
- file for details.
+Windows Task Scheduler → Automation
+
+---
+
+📸 Screenshots
+
+(Add screenshots here after we set them up, e.g., GitHub commits or Task Scheduler job setup.)
+
+---
+
+👨‍💻 How to Run
+
+1. Clone the repo:
+
+git clone https://github.com/YourUsername/cloud-security-audit.git
+
+
+2. Run all audits:
+
+.\scripts\run_all_audits.ps1
+
+
+3. Reports will appear in the reports/ folder.
+
+---
+
+🎯 Why This Project?
+
+This project simulates a real-world cloud security auditing pipeline.
+It demonstrates:
+
+Cloud security awareness
+
+Automation with scripting
+
+Git + GitHub workflows
+
+Infrastructure monitoring
+
+---
+
+📅 Future Improvements
+
+Add EC2 + CloudTrail audits
+
+Slack/Email notifications for critical findings
+
+GitHub Actions workflow for CI/CD integration
+
+
+
