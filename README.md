@@ -39,7 +39,7 @@ Here’s an example from an IAM Audit Report (JSON):
 ```
 
 
-⚡ Automation
+## ⚡ Automation
 
 A Windows Task Scheduler job runs run_all_audits.ps1 every day.
 
@@ -51,7 +51,7 @@ This ensures fresh reports are always available.
 
 ---
 
-🛠️ Tech Stack
+## 🛠️ Tech Stack
 
 AWS CLI / PowerShell → Data collection
 
@@ -61,13 +61,13 @@ Windows Task Scheduler → Automation
 
 ---
 
-📸 Screenshots
+## 📸 Screenshots
 
 (Add screenshots here after we set them up, e.g., GitHub commits or Task Scheduler job setup.)
 
 ---
 
-👨‍💻 How to Run
+## 👨‍💻 How to Run
 
 1. Clone the repo:
 
@@ -83,7 +83,7 @@ git clone https://github.com/YourUsername/cloud-security-audit.git
 
 ---
 
-🎯 Why This Project?
+## 🎯 Why This Project?
 
 This project simulates a real-world cloud security auditing pipeline.
 It demonstrates:
@@ -98,7 +98,7 @@ Infrastructure monitoring
 
 ---
 
-📅 Future Improvements
+## 📅 Future Improvements
 
 Add EC2 + CloudTrail audits
 
