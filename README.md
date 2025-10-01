@@ -71,8 +71,10 @@ Windows Task Scheduler → Automation
 
 1. Clone the repo:
 
-git clone https://github.com/YourUsername/cloud-security-audit.git
+``` bash
+git clone https://github.com/Vishwa09132006/cloud-security-audit.git
 
+```
 
 2. Run all audits:
 
