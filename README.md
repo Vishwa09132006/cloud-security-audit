@@ -24,8 +24,8 @@ cloud-security-audit/
 
 ---
 
-## 📊 Sample Report
-Here’s an example from an **IAM Audit Report (JSON)**:
+📊 Sample Report
+Here’s an example from an IAM Audit Report (JSON):
 
 ```json
 {
