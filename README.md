@@ -24,7 +24,10 @@ cloud-security-audit/
 
 ---
 
-📊 Sample Report
+
+---
+
+## 📊 Sample Report
 Here’s an example from an IAM Audit Report (JSON):
 
 ```json
@@ -34,7 +37,6 @@ Here’s an example from an IAM Audit Report (JSON):
   "LastUsed": "2025-09-25"
 }
 
----
 
 ⚡ Automation
 
