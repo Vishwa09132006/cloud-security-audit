@@ -61,9 +61,17 @@ Windows Task Scheduler → Automation
 
 ---
 
-## 📸 Screenshots
+## 📸 Screenshots  
 
-(Add screenshots here after we set them up, e.g., GitHub commits or Task Scheduler job setup.)
+### Run All Audits Script  
+![Run All Audits](Screenshot 2025-10-01 194805.png)  
+
+### GitHub Commit After Audit  
+![Commit Example](images/screenshots/github_commit.png)  
+
+### Task Scheduler Job Setup  
+![Task Scheduler](images/screenshots/task_scheduler.png)  
+
 
 ---
 
