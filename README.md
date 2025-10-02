@@ -24,9 +24,6 @@ cloud-security-audit/
 
 ---
 
-
----
-
 ## 📊 Sample Report
 Here’s an example from an IAM Audit Report (JSON):
 
@@ -63,13 +60,27 @@ Windows Task Scheduler → Automation
 
 ## 📸 Screenshots  
 
-## 📸 Screenshots
-
 ### Run All Audits Script
-![Run All Audits](images/Screenshot%202025-10-01%20194805.png)
+![Run All Audits Pt.1](images/Screenshot%202025-10-01%20194805.png)
+![Run All Audits Pt.2](images/Screenshot%202025-10-01%20194945.png)
+
+### 🔑 Scripts
+![IAM Audit Script](images/audit_iam.ps1screenshot.png)
+
+![VPC Audit Script]()
+
+![S3 Audit SCript]()
+
+### Reports
+![IAM Audit JSON](images/iam_audit.jsonscreenshot.png)
+
+![VPC Audit JSON]()
+
+![S3 Audit JSON]()
+
 
 ### GitHub Commit After Audit
-![GitHub Commit](images/Screenshot%202025-10-01%20194945.png)
+![GitHub Commit]
 
 
 ### Task Scheduler Job Setup  
