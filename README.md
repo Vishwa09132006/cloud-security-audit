@@ -65,18 +65,26 @@ Windows Task Scheduler → Automation
 ![Run All Audits Pt.2](images/Screenshot%202025-10-01%20194945.png)
 
 ### 🔑 Scripts
-#### IAM AUDIT SCRIPT ![IAM Audit Script](images/audit_iam.ps1screenshot.png)
+\
+### -IAM Audit Script
+![IAM Audit Script](images/audit_iam.ps1screenshot.png)
 
-#### VPC AUDIT SCRIPT ![VPC Audit Script](images/audit_vpc.ps1screenshot.png)
+#### -VPC Audit Script 
+![VPC Audit Script](images/audit_vpc.ps1screenshot.png)
 
-#### S3 AUDIT SCRIPT ![S3 Audit SCript](images/s3_audit.ps1screenshot.png)
+### -S3 Audit Script
+![S3 Audit SCript](images/s3_audit.ps1screenshot.png)
 
 ### Reports
-#### IAM AUDIT JSON ![IAM Audit JSON](images/iam_audit.jsonscreenshot.png)
 
-#### VPC AUDIT JSON ![VPC Audit JSON](images/vpc_audit.jsonscreenshot.png)
+#### -IAM AUDIT JSON 
+![IAM Audit JSON](images/iam_audit.jsonscreenshot.png)
 
-#### S3 AUDIT JSON ![S3 Audit JSON](images/s3_audit.jsonscreenshot.png)
+#### -VPC AUDIT JSON 
+![VPC Audit JSON](images/vpc_audit.jsonscreenshot.png)
+
+#### -S3 AUDIT JSON 
+![S3 Audit JSON](images/s3_audit.jsonscreenshot.png)
 
 
 ### GitHub Commit After Audit
