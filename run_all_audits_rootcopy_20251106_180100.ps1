@@ -1,3 +1,28 @@
+# --- Setup SSH agent and GitHub connection ---
+try {
+    # Try starting ssh-agent service (safe if already running)
+    Start-Service ssh-agent -ErrorAction Stop
+    Write-Host "ssh-agent service started successfully."
+} catch {
+    Write-Host "ssh-agent service could not start; trying manual start..."
+    Start-Process -NoNewWindow -FilePath "C:\Windows\System32\OpenSSH\ssh-agent.exe" -ArgumentList "-s"
+    Start-Sleep -Seconds 2
+}
+
+# Add your private SSH key (replace id_ed25519 with id_rsa if that's your file)
+$keyPath = "$env:USERPROFILE\.ssh\id_ed25519"
+if (Test-Path $keyPath) {
+    ssh-add $keyPath | Out-Null
+    Write-Host "SSH key added successfully."
+} else {
+    Write-Host "SSH key not found at $keyPath"
+}
+
+# Test GitHub connection (optional but useful for debugging)
+ssh -T git@github.com | Write-Host
+Write-Host "--- GitHub SSH setup complete ---`n"
+# ----------------------------------------------
+
 # run_all_audits.ps1
 # Master script to run IAM, VPC, and S3 audits, save reports, and push them to GitHub.
 

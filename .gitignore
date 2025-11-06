@@ -34,3 +34,11 @@ desktop.ini
 !reports/*.json
 !reports/*.csv
 
+# -- generated reports (ignored by default) --
+/reports/*.txt
+/reports/*.csv
+/reports/*.json
+.aws/
+temp.txt
+*.env
+*.ps1.d
