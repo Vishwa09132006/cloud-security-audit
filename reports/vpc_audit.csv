@@ -1,2 +1,0 @@
-"OwnerId","InstanceTenancy","CidrBlockAssociationSet","IsDefault","BlockPublicAccessStates","VpcId","State","CidrBlock","DhcpOptionsId"
-"818719120395","default","System.Object[]","True","@{InternetGatewayBlockMode=off}","vpc-0c08587ab6ff065d5","available","172.31.0.0/16","dopt-0fdb56e8becbb6fd9"

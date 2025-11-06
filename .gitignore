@@ -1,5 +1,4 @@
-
-# ---- VS Code ----
+﻿# ---- VS Code ----
 .vscode/
 *.code-workspace
 
@@ -24,21 +23,23 @@ venv/
 Thumbs.db
 desktop.ini
 
-# ---- Reports ----
-#reports/*.csv
-#reports/*.json
+# ---- Project files to keep tracked ----
+README.md
+LICENSE
+*.md
 
+# ---- Generated reports (ignore these) ----
+/reports/
+/output/
+/reports_public/   # use this folder if you want to keep human-friendly samples in the repo
 
-# Allow audit reports
-!reports/*.txt
-!reports/*.json
-!reports/*.csv
-
-# -- generated reports (ignored by default) --
-/reports/*.txt
-/reports/*.csv
-/reports/*.json
+# ---- AWS & secrets ----
 .aws/
-temp.txt
 *.env
 *.ps1.d
+*.pem
+id_rsa
+id_ed25519
+
+# ---- Temp ----
+temp.txt
